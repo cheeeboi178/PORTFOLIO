@@ -1,0 +1,48 @@
+/* Same styles from previous version */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background: #0f172a; color: white; line-height: 1.6; animation: fadeIn 0.5s ease; }
+
+/* Navigation */
+header { background: #1e293b; padding: 1rem 2rem; position: sticky; top: 0; z-index: 100; }
+nav { display: flex; justify-content: space-between; align-items: center; }
+.logo { color: #38bdf8; font-size: 1.5rem; font-weight: 600; }
+.nav-links { display: flex; list-style: none; }
+.nav-links li { margin-left: 1.5rem; }
+.nav-links a { color: white; text-decoration: none; transition: color 0.3s ease; }
+.nav-links a:hover, .nav-links a.active { color: #38bdf8; }
+.menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; }
+
+/* Hero */
+.hero { height: 90vh; display: flex; justify-content: center; align-items: center; text-align: center; background: linear-gradient(to right, #0f172a, #1e293b); }
+.hero h2 { font-size: 2.5rem; animation: fadeInUp 1s ease forwards; }
+.hero span { color: #38bdf8; }
+.hero p { margin: 1rem 0; animation: fadeInUp 1.5s ease forwards; }
+.btn { display: inline-block; background: #38bdf8; padding: 0.7rem 1.5rem; color: #0f172a; border-radius: 5px; text-decoration: none; transition: transform 0.3s ease; }
+.btn:hover { transform: scale(1.1); }
+
+/* Pages */
+.page-content { padding: 4rem 2rem; text-align: center; }
+h2 { color: #38bdf8; margin-bottom: 1.5rem; }
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+.project-card { background: #1e293b; padding: 2rem; border-radius: 10px; transition: transform 0.3s ease; }
+.project-card:hover { transform: translateY(-10px); }
+form { display: flex; flex-direction: column; max-width: 400px; margin: auto; }
+form input, form textarea { margin-bottom: 1rem; padding: 0.8rem; border: none; border-radius: 5px; }
+form button { border: none; }
+
+/* Footer */
+footer { text-align: center; padding: 1rem; background: #1e293b; margin-top: 2rem; }
+
+/* Animations */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .nav-links { position: absolute; top: 70px; right: 0; background: #1e293b; flex-direction: column; width: 200px; height: 0; overflow: hidden; transition: height 0.3s ease; }
+  .nav-links.active { height: 150px; }
+  .nav-links li { margin: 1rem 0; }
+  .menu-toggle { display: block; }
+}
